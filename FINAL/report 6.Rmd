@@ -1,0 +1,48 @@
+---
+title: "Data Cleaning Analysis Report"
+output: html_document
+---
+
+# **1. Load Data**
+```{r}
+set.seed(10)
+data <- data.frame(
+  ID = 1:50,
+  Age = sample(c(20:40, NA), 50, replace = TRUE),
+  Salary = sample(c(30000:60000, NA), 50, replace = TRUE)
+)
+
+data <- rbind(data, data[1:5, ])
+
+head(data)
+```
+
+# **2. Remove Duplicates**
+```{r}
+data_unique <- unique(data)
+head(data_unique)
+```
+
+# **3. Handle Missing Values**
+```{r}
+mean_age <- mean(data_unique$Age, na.rm = TRUE)
+data_unique$Age[is.na(data_unique$Age)] <- mean_age
+
+median_salary <- median(data_unique$Salary, na.rm = TRUE)
+data_unique$Salary[is.na(data_unique$Salary)] <- median_salary
+
+head(data_unique)
+```
+
+# **4. Summary**
+```{r}
+summary(data_unique)
+```
+
+# **5. Histogram**
+```{r}
+hist(data_unique$Age,
+     main = "Age Distribution",
+     xlab = "Age",
+     col = "skyblue")
+```
