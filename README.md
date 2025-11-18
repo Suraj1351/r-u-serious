@@ -1,3 +1,5 @@
+https://chatgpt.com/share/691bf1ad-1538-8013-bfad-4f446fea1f18
+
 # Q1: Dataframe, List, and Subsetting (No libraries required)
 
 # Create dataframe
