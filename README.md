@@ -25,6 +25,49 @@ my_list$Letters           # Letters
 my_list$Dataframe$Score   # Score column from dataframe
 
 
+# Create a dataframe
+students <- data.frame(
+  Name = c("Amit", "Riya", "Sameer", "Neha"),
+  Age = c(21, 22, 20, 23),
+  Marks = c(85, 90, 78, 92)
+)
+
+# Print the dataframe
+print("Student Dataframe:")
+print(students)
+
+# Subsetting the dataframe: Selecting specific columns
+print("Only Name and Marks columns:")
+print(students[, c("Name", "Marks")])
+
+# Subsetting rows using conditions
+print("Students with Marks greater than 85:")
+print(subset(students, Marks > 85))
+
+
+# Create a list
+my_list <- list(
+  Numbers = 1:5,
+  Names = c("A", "B", "C"),
+  Mixed = list(ID = 101, Score = 88)
+)
+
+# Print the list
+print("My List:")
+print(my_list)
+
+# Subsetting list elements
+print("Accessing Numbers element:")
+print(my_list$Numbers)
+
+print("Accessing second element of 'Names':")
+print(my_list$Names[2])
+
+print("Accessing Score inside the nested list:")
+print(my_list$Mixed$Score)
+
+
+
 # Q2: CSV Import, Display, Modify Column, Export
 
 id,name,age,department,salary
